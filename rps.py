@@ -11,18 +11,24 @@ print('Welcome to Rock, Paper, Scissors!')
 while True:
 # input player move
     while True:
-        move = input('R, P, S?: ')
+        print(' ')
+        move = input('Enter your choice (Rock, Paper, Scissors): ').lower()
         if move in playermove:
-            print("You played", move)
             break
         else:
+            print('Wrong Input...')
             continue
-    
 
 # computer move
     comp_move = random.choice(['rock', 'paper', 'scissors'])
-    print('Computer played', comp_move)
 
+
+# display moves
+    print(' ')
+    print(' ')
+    print("You played", move.capitalize())
+    print('Computer played', comp_move.capitalize())
+    print(' ')
 
 # compare moves
     if move == comp_move:
@@ -42,13 +48,17 @@ while True:
     elif move == 'scissors' and comp_move == 'rock':
         print('Computer Wins!')
 
+    print(' ')
 
-#play again?
+# play again?
     while True:
         again = input("Do you want to play again? (y/n): ")
         if again == 'y':
             break
         elif again == 'n':
+            print(' ')
+            print('Thanks for playing!')
+            print(' ')
             exit()
         else:
             print("Wrong Input...")
