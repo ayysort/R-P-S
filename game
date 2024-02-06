@@ -1,1 +1,54 @@
-# start
+#rps
+import random
+
+playermove = ['rock', 'paper', 'scissors']
+
+print(' ')
+print(' ')
+print(' ')
+
+print('Welcome to Rock, Paper, Scissors!')
+while True:
+# input player move
+    while True:
+        move = input('R, P, S?: ')
+        if move in playermove:
+            print("You played", move)
+            break
+        else:
+            continue
+    
+
+# computer move
+    comp_move = random.choice(['rock', 'paper', 'scissors'])
+    print('Computer played', comp_move)
+
+
+# compare moves
+    if move == comp_move:
+        print("It's a tie!")
+
+    elif move == 'rock' and comp_move == 'scissors':
+        print('You Win!')
+    elif move == 'paper' and comp_move == 'rock':
+        print('You Win!')          
+    elif move == 'scissors' and comp_move == 'paper':
+        print('You Win!')
+        
+    elif move == 'rock' and comp_move == 'paper':
+        print('Computer Wins!')
+    elif move == 'paper' and comp_move == 'scissors':
+        print('Computer Wins!')
+    elif move == 'scissors' and comp_move == 'rock':
+        print('Computer Wins!')
+
+
+#play again?
+    while True:
+        again = input("Do you want to play again? (y/n): ")
+        if again == 'y':
+            break
+        elif again == 'n':
+            exit()
+        else:
+            print("Wrong Input...")
