@@ -1,13 +1,25 @@
 #rps
 import random
-
+win = 0
+lose = 0
 playermove = ['rock', 'paper', 'scissors']
 
+# record keeping
+def youwin():
+    print("You Win!")
+    global win
+    win += 1
+    
+def youlose():
+    print('Computer Wins!')
+    global lose
+    lose += 1
+    
 print(' ')
 print(' ')
 print(' ')
-
 print('Welcome to Rock, Paper, Scissors!')
+
 while True:
 # input player move
     while True:
@@ -35,20 +47,21 @@ while True:
         print("It's a tie!")
 
     elif move == 'rock' and comp_move == 'scissors':
-        print('You Win!')
+        youwin()
     elif move == 'paper' and comp_move == 'rock':
-        print('You Win!')          
+        youwin()          
     elif move == 'scissors' and comp_move == 'paper':
-        print('You Win!')
+        youwin()
         
     elif move == 'rock' and comp_move == 'paper':
-        print('Computer Wins!')
+        youlose()
     elif move == 'paper' and comp_move == 'scissors':
-        print('Computer Wins!')
+        youlose()
     elif move == 'scissors' and comp_move == 'rock':
-        print('Computer Wins!')
+        youlose()
 
     print(' ')
+    print('Your record is: ', win, '-', lose )
 
 # play again?
     while True:
